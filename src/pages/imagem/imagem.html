@@ -15,9 +15,9 @@
 
 <ion-content padding>
   
-  <h1 *ngIf="imagens.lentgh == 0">Não há imagens cadastradas</h1>
+  <h1 *ngIf="imagens.length == 0">Não há imagens cadastradas</h1>
 
-  <ion-list *ngIf="imagens.lentgh > 0">
+  <ion-list *ngIf="imagens.length > 0">
       <img *ngFor="let i of imagens" src="{{i.url}}" (click)="viewImg(i.url)">
   </ion-list>
 </ion-content>

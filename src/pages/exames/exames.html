@@ -28,9 +28,9 @@
       </ion-card-content>
     </ion-card>
 
-    <h1 *ngIf="paciente.exames == 0" class="margin-top">Não exames cadastrados</h1>
+    <h1 *ngIf="paciente.exames.length == 0" class="margin-top">Não exames cadastrados</h1>
 
-    <ion-card class="margin-top" *ngIf="paciente.exames > 0">
+    <ion-card class="margin-top" *ngIf="paciente.exames.length > 0">
       <ion-card-header>
         Exames
       </ion-card-header>

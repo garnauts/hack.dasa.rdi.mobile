@@ -21,6 +21,8 @@ import { ZoomAreaModule } from 'ionic2-zoom-area';
 import { PacientesPage } from '../pages/pacientes/pacientes';
 import { DataService } from '../services/data.service';
 
+import { IonicImageViewerModule } from 'ionic-img-viewer';  
+
 @NgModule({
   declarations: [
     MyApp,    
@@ -37,7 +39,7 @@ import { DataService } from '../services/data.service';
     IonicModule.forRoot(MyApp),
     PdfViewerModule,
     BrowserAnimationsModule,
-    ZoomAreaModule.forRoot(),
+    IonicImageViewerModule,
     HttpClientModule
   ],
   bootstrap: [IonicApp],

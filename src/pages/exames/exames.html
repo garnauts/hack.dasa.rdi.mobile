@@ -11,7 +11,7 @@
           <ion-icon name="menu"></ion-icon>
         </button>
         
-    <ion-title>exames</ion-title>
+    <ion-title>Todos exames</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -35,7 +35,7 @@
         Exames
       </ion-card-header>
     
-      <ion-list>
+      <ion-list inset>
         <button ion-item (click)="visualizarExame(exame)" *ngFor="let exame of paciente.exames">
           <ion-icon name="list-box" item-start></ion-icon>
           {{exame.codigo}} - {{exame.data}}

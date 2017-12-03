@@ -18,7 +18,14 @@
   <h1 *ngIf="imagens.length == 0">Não há imagens cadastradas</h1>
 
   <ion-list *ngIf="imagens.length > 0">
-      <img *ngFor="let i of imagens" src="{{i.url}}" (click)="viewImg(i.url)">
+      <ion-card>
+                
+        <ion-card-content>
+          <img *ngFor="let i of imagens" src="{{i.url}}" (click)="presentImage(myImage)" #myImage id="{{'img' + $index}}">
+        </ion-card-content>
+      
+      </ion-card>
+
   </ion-list>
   
 </ion-content>

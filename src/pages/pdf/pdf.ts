@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the PdfPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-pdf',
@@ -15,11 +8,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PdfPage {
 
+  exame = {};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    debugger;
+    this.exame = navParams.get('exame');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PdfPage');
+  goBack() {
+    this.navCtrl.pop();
+  }
+
+  isLoaded: boolean = false;
+
+  afterLoadComplete(pdfData: any) {
+    this.isLoaded = true;
   }
 
 }

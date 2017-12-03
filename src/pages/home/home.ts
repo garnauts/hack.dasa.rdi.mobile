@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ExamesPage } from '../exames/exames';
+import { PacientesPage } from '../pacientes/pacientes';
 
 @IonicPage()
 @Component({
@@ -14,7 +14,7 @@ export class HomePage {
   }
 
   pesquisarPaciente() {
-    this.navCtrl.push(ExamesPage)
+    this.navCtrl.push(PacientesPage);
   }
 
   ionViewDidLoad() {

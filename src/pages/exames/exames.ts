@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VisualizaExame } from '../visualiza-exame/visualiza-exame';
+import { PdfPage } from '../pdf/pdf';
+
 
 
 @IonicPage()
@@ -10,15 +11,14 @@ import { VisualizaExame } from '../visualiza-exame/visualiza-exame';
 })
 export class ExamesPage {
 
+  paciente = {};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.paciente = navParams.get('paciente');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ExamesPage');
-  }
-
-  visualizarExame() {
-    this.navCtrl.push(VisualizaExame);
+  visualizarExame(exame) {
+    this.navCtrl.push(PdfPage, { exame: exame });
   }
 
 }

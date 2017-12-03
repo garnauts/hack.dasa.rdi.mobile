@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
+  {{ imagens }}
+  <ion-list>
+      <img *ngFor="let i of imagens" src="{{i}}" (click)="viewImg(i)">
+  </ion-list>
 
 </ion-content>

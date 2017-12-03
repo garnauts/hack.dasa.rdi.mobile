@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>pacientes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Nome do Paciente</ion-label>
+    <ion-input type="text" [(ngModel)]="nomePaciente"></ion-input>
+  </ion-item>
+
+  <button ion-button full (click)="searchNome(nomePaciente)" class="pesquisar">Pesquisar</button>
+
+  <ion-list class="lista">
+    <ion-card class="margin-top" *ngFor="let paciente of listaPacientes" (click)="selecionaPaciente(paciente)">
+      <ion-card-header>
+        {{paciente.nome}}
+      </ion-card-header>
+      <ion-card-content>
+        The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

@@ -19,56 +19,25 @@
 
 <ion-content padding>
 
-    <ion-item>
-      <ion-label>CPF Paciente</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-card>
+    <ion-card class="margin-top">
       <ion-card-header>
-        Thiago Vieira Tersaiol
+        {{paciente.nome}}
       </ion-card-header>
       <ion-card-content>
         The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
       </ion-card-content>
     </ion-card>
 
-    <ion-card>
+    <ion-card class="margin-top">
       <ion-card-header>
         Exames
       </ion-card-header>
     
       <ion-list>
-        <button ion-item (click)="visualizarExame()">
-          <ion-icon name="cart" item-start></ion-icon>
-          Shopping
-        </button>
-    
-        <button ion-item>
-          <ion-icon name="medical" item-start></ion-icon>
-          Hospital
-        </button>
-    
-        <button ion-item>
-          <ion-icon name="cafe" item-start></ion-icon>
-          Cafe
-        </button>
-    
-        <button ion-item>
-          <ion-icon name="paw" item-start></ion-icon>
-          Dog Park
-        </button>
-    
-        <button ion-item>
-          <ion-icon name="beer" item-start></ion-icon>
-          Pub
-        </button>
-    
-        <button ion-item>
-          <ion-icon name="planet" item-start></ion-icon>
-          Space
-        </button>
-    
+        <button ion-item (click)="visualizarExame(exame)" *ngFor="let exame of paciente.exames">
+          <ion-icon name="list-box" item-start></ion-icon>
+          {{exame.codigo}} - {{exame.data}}
+        </button>    
       </ion-list>
     </ion-card>
 

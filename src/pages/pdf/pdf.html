@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>pdf</ion-title>
+
+    <!-- <button ion-button icon-only (click)="goBack()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button> -->
+
+    <ion-title>Visualização de Laudo</ion-title>
+
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+      
+      <pdf-viewer src="{{exame.laudo}}"
+                  [show-all]="true"
+                  (after-load-complete)="afterLoadComplete($event)"
+      ></pdf-viewer>
 </ion-content>

@@ -20,4 +20,5 @@
   <ion-list *ngIf="imagens.length > 0">
       <img *ngFor="let i of imagens" src="{{i.url}}" (click)="viewImg(i.url)">
   </ion-list>
+  
 </ion-content>

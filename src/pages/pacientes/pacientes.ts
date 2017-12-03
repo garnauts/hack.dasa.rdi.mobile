@@ -13,7 +13,7 @@ export class PacientesPage {
   listaPacientes = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private core: CoreService) {
-    
+    this.searchNome('');
   }
 
   searchNome(nome) {

@@ -20,9 +20,12 @@
 
 
 <ion-content padding>
-      
-      <pdf-viewer src="{{exame.laudo}}"
-                  [show-all]="true"
-                  (after-load-complete)="afterLoadComplete($event)"
-      ></pdf-viewer>
+
+  <h1 *ngIf="!exame.laudo">Não há laudo cadastrado</h1>
+
+  <pdf-viewer src="{{exame.laudo}}" *ngIf="exame.laudo"
+              [show-all]="true"
+              (after-load-complete)="afterLoadComplete($event)"
+  ></pdf-viewer>
+
 </ion-content>

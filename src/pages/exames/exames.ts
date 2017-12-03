@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PdfPage } from '../pdf/pdf';
+import { VisualizaExame } from '../visualiza-exame/visualiza-exame';
+import { DataService } from '../../services/data.service';
 
 
 
@@ -13,12 +14,14 @@ export class ExamesPage {
 
   paciente = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataService: DataService) {
     this.paciente = navParams.get('paciente');
   }
 
   visualizarExame(exame) {
-    this.navCtrl.push(PdfPage, { exame: exame });
+    this.dataService.setExame(exame);
+    console.log(exame);
+    this.navCtrl.push(VisualizaExame);
   }
 
 }

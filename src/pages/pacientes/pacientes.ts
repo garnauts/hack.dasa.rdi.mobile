@@ -18,7 +18,7 @@ export class PacientesPage {
 
   searchNome(nome) {
     this.core.getPacienteByNome(nome).subscribe(data => {
-      this.listaPacientes.push(data);
+      this.listaPacientes = data;
     }, error => console.log(error));  
   }
 

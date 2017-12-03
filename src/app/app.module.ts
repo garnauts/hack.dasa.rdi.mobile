@@ -19,6 +19,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ZoomAreaModule } from 'ionic2-zoom-area';
 import { PacientesPage } from '../pages/pacientes/pacientes';
+import { DataService } from '../services/data.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PacientesPage } from '../pages/pacientes/pacientes';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CoreService,
-    HttpService
+    HttpService,
+    DataService
   ]
 })
 export class AppModule {}

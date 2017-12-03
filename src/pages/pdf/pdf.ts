@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataService } from '../../services/data.service';
 
 @IonicPage()
 @Component({
@@ -10,9 +11,8 @@ export class PdfPage {
 
   exame = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    debugger;
-    this.exame = navParams.get('exame');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataService: DataService) {
+    this.exame = dataService.getExame();
   }
 
   goBack() {

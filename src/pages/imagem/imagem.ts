@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 import { ZoomPage } from '../zoom/zoom';
-
-/**
- * Generated class for the ImagemPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { DataService } from '../../services/data.service';
 
 @IonicPage()
 @Component({
@@ -18,15 +12,9 @@ export class ImagemPage {
 
   imagens = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ImagemPage');
-
-    this.imagens.push('https://s3-sa-east-1.amazonaws.com/s1-major/lsgflsdksadlkladsfalgf04tt95095.jpg');
-    this.imagens.push('https://s3-sa-east-1.amazonaws.com/s1-major/kfjsdfjsfj439r8498risdjf49.jpg');
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public dataService: DataService ) {
+    debugger;
+    this.imagens = dataService.getExame().imagens;
   }
 
   viewImg(i) {
